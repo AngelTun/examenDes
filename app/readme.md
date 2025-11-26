@@ -23,5 +23,6 @@ kubectl get svc webapp-service
 
 # 7. Acceder al NodePort desde tu máquina con el port forward:
 kubectl port-forward svc/webapp-service 8080:80
+kubectl port-forward svc/webapp-service 30710:80
 
 # 8. abrir http://localhost:8080/
