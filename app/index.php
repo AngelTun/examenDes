@@ -62,7 +62,7 @@ function app_log($msg) {
 function show_home() {
     $pod   = envv('POD_NAME', 'unknown-pod');
     $node  = envv('NODE_NAME', 'unknown-node');
-    $banner= envv('BANNER', 'Bienvenido al ITM');
+    $banner= envv('BANNER', 'unknown-banner');
 
     header('Content-Type: text/html; charset=utf-8');
 
