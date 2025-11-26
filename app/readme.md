@@ -26,3 +26,9 @@ kubectl port-forward svc/webapp-service 8080:80
 kubectl port-forward svc/webapp-service 30710:80
 
 # 8. abrir http://localhost:8080/
+
+
+# extra "borrar pods"
+kubectl delete -f deployment.yaml
+kubectl delete -f service.yaml
+kubectl delete -f configmap.yaml

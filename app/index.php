@@ -1,13 +1,9 @@
 <?php
-// App en un solo archivo, 100% funcional
 session_start();
 
-// ----------------------
-// 🚦 Router corregido
-// ----------------------
+
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// 🔥 Cualquier POST entra aquí → calculadora sin errores ni 404
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     handle_calc_post();
     exit;
@@ -25,15 +21,12 @@ if ($uri === '/' || $uri === '' || $uri === '/index.php') {
 
 exit();
 
-// ----------------------
-// Helpers
-// ----------------------
+
 function envv($key, $default = '') {
     $v = getenv($key);
     return $v === false ? $default : $v;
 }
 
-// Eval matemático seguro
 function safe_eval_math($expr, &$error = null) {
     $expr = trim($expr);
     $expr = str_replace(',', '.', $expr);
@@ -64,7 +57,7 @@ function app_log($msg) {
 }
 
 // ----------------------
-// 🏠 Página principal
+//  Página principal
 // ----------------------
 function show_home() {
     $pod   = envv('POD_NAME', 'unknown-pod');
@@ -137,7 +130,7 @@ function show_home() {
 }
 
 // ----------------------
-// 🔢 Procesar cálculo
+//  Procesar cálculo
 // ----------------------
 function handle_calc_post() {
     $expr = trim($_POST['expr'] ?? '');
