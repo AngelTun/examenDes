@@ -9,7 +9,7 @@ docker run --rm -p 8080:80 angeltun/app-k8s:v1
 
 # 4. Subir a Docker Hub
 docker login
-docker push TU_USUARIO/app-k8s:v1
+docker push angeltun/app-k8s:v1
 
 # 5. Para probar en Kubernetes estando dentro de la carpeta k8s
 kubectl apply -f configmap.yaml
